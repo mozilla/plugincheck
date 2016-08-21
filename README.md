@@ -2,8 +2,7 @@
 plugincheck
 ===========
 
-plugincheck is the future new backend for `<https://www.mozilla.org/plugincheck/>`_.
-It will live at `<http://plugins.mozilla.org/>`_.
+plugincheck is the future new backend for `https://www.mozilla.org/plugincheck/`.
 
 This contains the JSON datastore and a suite of tools for documenting and validating it.
 
