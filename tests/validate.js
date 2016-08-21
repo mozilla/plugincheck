@@ -32,6 +32,11 @@ describe('the json document', function() {
       expect(mimes).to.not.be.empty;
     });
 
+    for (let mime of mimes) {
+      it(mime + ' should be a valid mime_type', function() {
+        expect(mime).to.be.ok; // todo: actually validate
+      });
+    }
   });
 });
 
