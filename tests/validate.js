@@ -12,17 +12,28 @@ describe('the json document', function() {
     expect(pluginsList).to.have.property('plugins').that.is.an('object');
   });
 
-  it('should have a mime_types array', function() {
-    expect(pluginsList).to.have.property('mime_types').that.is.an('array');
-  });
-
   describe('the top-level plugins object', function() {
     let plugins = pluginsList.plugins;
 
-    for (let plugin_name in plugins) {
-      let plugin_data = plugins[plugin_name];
-      // validate plugin
-    }
+    it('should not be empty', function() {
+      expect(plugins).to.not.be.empty;
+    });
+
+    describe('each plugin should validate', function() {
+      for (let plugin_name in plugins) {
+        let plugin_data = plugins[plugin_name];
+        it(plugin_name + ' should have a valid payload', function() {
+          // validate plugin
+          expect(plugin_data).to.be.an('object');
+        });
+      }
+    });
+
+  });
+
+
+  it('should have a mime_types array', function() {
+    expect(pluginsList).to.have.property('mime_types').that.is.an('array');
   });
 
   describe('the top-level mime_types array', function() {
@@ -32,11 +43,14 @@ describe('the json document', function() {
       expect(mimes).to.not.be.empty;
     });
 
-    for (let mime of mimes) {
-      it(mime + ' should be a valid mime_type', function() {
-        expect(mime).to.be.ok; // todo: actually validate
-      });
-    }
+    describe('each mime_type entry should validate', function() {
+      for (let mime of mimes) {
+        it(mime + ' should be a valid mime_type', function() {
+          expect(mime).to.be.ok; // todo: actually validate
+        });
+      }
+    });
+
   });
 });
 
