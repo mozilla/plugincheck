@@ -1,22 +1,7 @@
 sudo: no
-language: python
-python: "2.7"
-
-env:
-  global:
-    - SECRET_KEY="travis-doesnt-keep-secrets"
-    - DATABASE_URL="postgres://postgres:@localhost:5432/plugincheck"
-    - PIP_DOWNLOAD_CACHE="pip_cache"
-  matrix:
-    - TEST_SUITE=django
-
-cache:
-  directories:
-    - pip_cache
-
-install: scripts/travis/install.sh
-before_script: scripts/travis/setup.sh
-script: scripts/travis/dispatch.sh $TEST_SUITE
+language: node_js
+node_js:
+- '0.10'
 
 notifications:
     email: false
