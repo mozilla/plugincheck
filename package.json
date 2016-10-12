@@ -1,0 +1,15 @@
+{
+  "name": "plugincheck",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MPL-2.0",
+  "repository": "https://github.com/mozilla/plugincheck",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -C tests/"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
