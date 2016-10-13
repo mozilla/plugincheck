@@ -2,7 +2,7 @@
 
 // This is really the first test. If the tests fail here
 // then there is likely a JSON formatting error in the file.
-var pluginsList = require('../static/plugins_list.json');
+var pluginsList = require('../docs/plugins_list.json');
 
 var chai = require('chai'),
     expect = chai.expect;
